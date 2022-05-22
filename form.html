@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="text-editor.css">
 </head>
 <body>
+    <div id="snackbar">Copied to Clipboard..</div>
     <div class="navbar">
         <div class="links">
             <ul>
@@ -17,17 +18,24 @@
             </ul>
         </div>
         <div class="logo"><h2>Vidhya</h2></div>
-        <div class="search">O</div>
+        <!-- <div class="search">O</div> -->
     </div>
     <div class="main-container">
         <div class="left"></div>
         <div class="center" >
-            <div class="tool-bar"><ul>
-                <li><button id="editorbutton" onclick="addSeg(`h2`)">H</button></li>
-                <li><button id="editorbutton" onclick="addSeg(`p`)">p</button></li>
-                <li><button id="editorbutton" onclick="addSeg(`table`)">table</button></li>
-                <li><button id="editorbutton" onclick="addSeg(`image`)">Image</button></li>
-            </ul></div>
+            <div class="btn-container">
+                <div class="tool-bar">
+                
+                    <ul>
+                    <li><button class="editorbutton" onclick="addSeg(`h2`)">H</button></li>
+                    <li><button class="editorbutton" onclick="addSeg(`p`)">p</button></li>
+                    <!-- <li><button class="editorbutton" onclick="addSeg(`table`)">table</button></li> -->
+                    <li><button class="editorbutton" onclick="addSeg(`image`)">Image</button></li>
+                </ul>
+                
+            </div>
+            <div><button onclick="saveData()" id="save">Save</button></div>
+            </div>
             <div class="tableParams" id="tableParams">
                 <label for="" >Row :</label>
                 <input id="numRow" type="number" value="5">
@@ -45,7 +53,7 @@
                 <div id="previewImg" class="previewImg"></div>
             </div>
             <div id="text-editor" class="text-editor" contenteditable="true" >
-                <h1 >Heading</h1>
+                <h1 >Title</h1>
                 <p >Paragraph</p>
 
             </div>
