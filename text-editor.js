@@ -86,3 +86,61 @@ function loadImg(){
     
     // console.log(this.img.)
 }
+// saveData()
+function saveData(){
+    let newdata = [];
+    // let newArticle = editor.innerHTML;
+    // let length = editor.childElementCount; 
+    // **************************************
+    // to make object
+    for (let i = 0; i < editor.children.length; i++) {
+        const element = editor.children[i];
+        if(element.tagName.toLowerCase().toString()=="img"){
+            
+            newelement={"type": element.tagName.toLowerCase().toString(),
+        "content": element.src};
+        }else{
+            
+            newelement={"type": element.tagName.toLowerCase().toString(),
+        "content": element.innerText};
+        }
+        
+
+        newdata.push(newelement)
+    }
+    // to make string
+    let clip = `[`;
+    for (let i = 0; i < editor.children.length; i++) {
+        const element = editor.children[i];
+        if(element.tagName.toLowerCase().toString()=="img"){
+            
+            clip+=`{"type": "`+element.tagName.toLowerCase().toString()+`",
+        "content":"`+ element.src+`"}`;
+        }else{
+            clip+=`{"type": "`+element.tagName.toLowerCase().toString()+`",
+        "content":"`+ element.innerText+`"}`;
+        }
+        if(i+1<editor.children.length){
+
+            clip += "," ;        
+        }
+    
+    // newdata.push(newelement)
+}
+clip+="]";        
+
+    // console.log(newdata)
+//     console.log(clip)
+    navigator.clipboard.writeText(clip);
+    saveSnackbar();
+}
+function saveSnackbar() {
+    // Get the snackbar DIV
+    var x = document.getElementById("snackbar");
+  
+    // Add the "show" class to DIV
+    x.className = "show";
+  
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+  }
