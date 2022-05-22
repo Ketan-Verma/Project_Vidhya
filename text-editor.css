@@ -1,0 +1,77 @@
+:root{
+    --primary-bg-col:rgb(33, 37, 41);
+    --sec-bg-col:rgba(17, 17, 16, 0.534);
+    --special-fonts:orange;
+    --primary-font-col:white;
+    --sec-font-col:rgb(108, 117, 125)
+    ;
+    --primary-border-col:rgba(0,0,0,.84);
+    --sec-border-col:rgba(0,0,0,.04);
+}
+/* removes outline */
+[contenteditable="true"]:active,
+[contenteditable="true"]:focus{
+  border:none;
+  outline:none;
+}
+
+.tool-bar ul{
+    display: flex;
+    /* flex-direction: row; */
+}
+.tool-bar button{
+    min-width: 2em;
+}
+.tool-bar *{
+    margin: 0;
+    padding: 0;
+}
+.tableParams,.img-loader{
+    display: none;
+}
+ .show{
+    display: block;
+}
+.tableParams input{
+    width: 2em;
+}
+/* table  */
+#table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+}
+  
+  #table td, #table th {
+    padding: 8px;
+    /* background-color: var(--primary-bg-col); */
+  }
+  
+  #table tr:nth-child(even){background-color:var(--sec-bg-col);}
+  
+  #table tr:hover {background-color: rgb(69, 69, 69);}
+  
+  #table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--special-fonts);
+    color: var(--primary-font-col);
+  }
+/* Buttons */
+#editorbutton{
+
+    background-color: var(--special-fonts); /* Green */
+    color: white;
+}
+#editorbutton,input{
+        border: none;
+        padding: 0.4em 0.7em ;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1em;
+        margin-right: 1em;     
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Vidhya</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="text-editor.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="links">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./form.html">Create</a></li>
+            </ul>
+        </div>
+        <div class="logo"><h2>Vidhya</h2></div>
+        <div class="search">O</div>
+    </div>
+    <div class="main-container">
+        <div class="left"></div>
+        <div class="center" >
+            <div class="tool-bar"><ul>
+                <li><button id="editorbutton" onclick="addSeg(`h2`)">H</button></li>
+                <li><button id="editorbutton" onclick="addSeg(`p`)">p</button></li>
+                <li><button id="editorbutton" onclick="addSeg(`table`)">table</button></li>
+                <li><button id="editorbutton" onclick="addSeg(`image`)">Image</button></li>
+            </ul></div>
+            <div class="tableParams" id="tableParams">
+                <label for="" >Row :</label>
+                <input id="numRow" type="number" value="5">
+                <label for="">Columns :</label>
+                <input id="numCol" type="number" value="2">
+                <button id="editorbutton" onclick="addTable()" >Add</button>
+            </div>
+            <div class="img-loader" id="img-loader">
+                
+                <div class="inputUrl">
+                    <label for="">Image URL:</label><br>
+                <input type="url" name="  " id="imgurl">
+                <button id="editorbutton" onclick="loadImg()">Load</button>
+                </div>
+                <div id="previewImg" class="previewImg"></div>
+            </div>
+            <div id="text-editor" class="text-editor" contenteditable="true" >
+                <h1 >Heading</h1>
+                <p >Paragraph</p>
+
+            </div>
+        </div>
+        <div class="right"></div>
+    </div>
+    <div class="footer"></div>
+    <script src="text-editor.js"></script>
+    <script src="data.js"></script>
+    <!-- <script src="showdata.js"></script> -->
+</body>
+</html>
